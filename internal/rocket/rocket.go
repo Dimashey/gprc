@@ -12,7 +12,7 @@ type Rocket struct {
 }
 
 type Store interface {
-	GetRocketById(id string) (Rocket, error)
+	GetRocketByID(id string) (Rocket, error)
 	InsertRocket(rocket Rocket) (Rocket, error)
 	DeleteRocket(id string) error
 }
@@ -26,7 +26,7 @@ func New(store Store) Service {
 }
 
 func (s Service) GetRocketByID(ctx context.Context, id string) (Rocket, error) {
-	rocket, err := s.Store.GetRocketById(id)
+	rocket, err := s.Store.GetRocketByID(id)
 	if err != nil {
 		return Rocket{}, err
 	}
