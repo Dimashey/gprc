@@ -47,19 +47,19 @@ func (mr *MockStoreMockRecorder) DeleteRocket(arg0 interface{}) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteRocket", reflect.TypeOf((*MockStore)(nil).DeleteRocket), arg0)
 }
 
-// GetRocketById mocks base method.
-func (m *MockStore) GetRocketById(arg0 string) (Rocket, error) {
+// GetRocketByID mocks base method.
+func (m *MockStore) GetRocketByID(arg0 string) (Rocket, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetRocketById", arg0)
+	ret := m.ctrl.Call(m, "GetRocketByID", arg0)
 	ret0, _ := ret[0].(Rocket)
 	ret1, _ := ret[1].(error)
 	return ret0, ret1
 }
 
-// GetRocketById indicates an expected call of GetRocketById.
-func (mr *MockStoreMockRecorder) GetRocketById(arg0 interface{}) *gomock.Call {
+// GetRocketByID indicates an expected call of GetRocketByID.
+func (mr *MockStoreMockRecorder) GetRocketByID(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetRocketById", reflect.TypeOf((*MockStore)(nil).GetRocketById), arg0)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetRocketByID", reflect.TypeOf((*MockStore)(nil).GetRocketByID), arg0)
 }
 
 // InsertRocket mocks base method.

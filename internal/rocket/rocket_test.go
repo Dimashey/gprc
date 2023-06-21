@@ -17,7 +17,7 @@ func TestRocketService(t *testing.T) {
 
 		id := "UUID-1"
 
-		rocketStoreMock.EXPECT().GetRocketById(id).Return(Rocket{ID: id}, nil)
+		rocketStoreMock.EXPECT().GetRocketByID(id).Return(Rocket{ID: id}, nil)
 
 		rocketService := New(rocketStoreMock)
 
