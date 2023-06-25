@@ -21,9 +21,16 @@ func New() (Store, error) {
 	dbPort := os.Getenv("DB_PORT")
 	dbSSLMode := os.Getenv("DB_SSL_MODE")
 
-	connectionString := fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=%s", dbHost, dbPort, dbUsername, dbTable, dbPassword, dbSSLMode)
+	connectionString := fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=%s",
+		dbHost,
+		dbPort,
+		dbUsername,
+		dbTable,
+		dbPassword,
+		dbSSLMode,
+	)
 
-	db, err := sqlx.Connect("postgress", connectionString)
+	db, err := sqlx.Connect("postgres", connectionString)
 	if err != nil {
 		return Store{}, err
 	}
