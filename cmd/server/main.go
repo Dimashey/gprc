@@ -5,6 +5,7 @@ import (
 
 	"github.com/Dimashey/gprc/internal/db"
 	"github.com/Dimashey/gprc/internal/rocket"
+	"github.com/Dimashey/gprc/internal/transport/grpc"
 )
 
 func Run() error {
@@ -19,7 +20,14 @@ func Run() error {
 		return err
 	}
 
-	_ = rocket.New(rocketStore)
+	rocketService := rocket.New(rocketStore)
+
+	rktHandler := grpc.New(rocketService)
+
+	if err := rktHandler.Serve(); err != nil {
+		return err
+	}
+
 	return nil
 }
 
